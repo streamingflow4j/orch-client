@@ -1,0 +1,23 @@
+  <div class="container">
+
+    <p><label><b style="color: #c90101;">Delete Rule:</b></label></p>
+
+    <form [formGroup]="entityRuleDeleteForm" (ngSubmit)="submit(entityRuleDeleteForm.value)">
+
+      <div class="form-group">
+        Rule ID: <input type="text" formControlName="idrule" required>
+        <div *ngIf="entityRuleDeleteForm.get('idrule')?.invalid && submitted" class="alert alert-danger">
+          Rule ID is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+    </div>
+
+
+
+
+
+

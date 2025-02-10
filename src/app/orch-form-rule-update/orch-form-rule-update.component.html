@@ -1,0 +1,33 @@
+
+<div class="container">
+
+  <p><label><b style="color: #de8200;">Update Rule:</b></label></p>
+
+  <form [formGroup]="entityRuleUpdateForm" (ngSubmit)="submit(entityRuleUpdateForm.value)">
+
+    <div class="form-group">
+      <label>Name Id:&nbsp;</label>
+      <input type="text" formControlName="id" required>
+      <div *ngIf="entityRuleUpdateForm.get('id')?.invalid && submitted" class="alert alert-danger">
+        Name ID is required
+      </div>
+      Rule ID: <input type="text" formControlName="idrule" required>
+      <div *ngIf="entityRuleUpdateForm.get('idrule')?.invalid && submitted" class="alert alert-danger">
+        Rule ID is required
+      </div>
+      Event Rule:
+      <textarea id="rule" formControlName="rule" rows="5" cols="70"></textarea>
+      <div *ngIf="entityRuleUpdateForm.get('rule')?.invalid && submitted" class="alert alert-danger">
+        Rule Query is required
+      </div>
+      Destination Queue: <input type="text" formControlName="destination" required>
+      <div *ngIf="entityRuleUpdateForm.get('destination')?.invalid && submitted" class="alert alert-danger">
+        Destination is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+

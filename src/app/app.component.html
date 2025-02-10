@@ -1,0 +1,63 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<main class="main">
+
+  <div class="content">
+    <div class="left-side">
+      <h1>Data Stream Orchestor</h1>
+      <p>Congratulations! You are in the Admin Layer. 🎉</p>
+
+      <ul class="nav navbar-nav item">
+        <li>
+          <a routerLink="" routerLinkActive="active">Home</a>
+        </li>
+        <li>
+          <a routerLink="/event" routerLinkActive="active">Create Event</a>
+        </li>
+        <li>
+          <a routerLink="/rule" routerLinkActive="active">Create Rule</a>
+        </li>
+        <li>
+          <a routerLink="/rule-update" routerLinkActive="active">Update Rule</a>
+        </li>
+        <li>
+          <a routerLink="/rule-delete" routerLinkActive="active">Delete Rule</a>
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div class="right-side">
+      <div class="pill-group">
+         <img class="angular-logo" src="icone.png" alt="SF4J Logo" />
+
+         <label for="choices"><b>Choose the Platform:</b></label>
+          <select id="choices" name="choices" (change)="onChoiceChange($event)">
+              <option value="kafka">Kafka</option>
+              <option value="rabbitmq">RabbitMQ</option>
+              <option value="redis">Redis</option>
+          </select>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />

@@ -1,0 +1,48 @@
+<div class="container">
+<p><b style="color: #007bff;">Create Event:</b></p>
+
+<form [formGroup]="entityForm" (ngSubmit)="submit(entityForm.value)">
+
+  <div class="form-group">
+    <label>Name Id:&nbsp;</label>
+    <input type="text" formControlName="id" required>
+    <div *ngIf="entityForm.get('id')?.invalid && submitted" class="alert alert-danger">
+      Name ID is required
+    </div>
+  </div>
+
+  <div class="attributes-container">
+    <h3>Attributes</h3>
+    <button type="button" class="btn btn-primary" (click)="addAttribute(inputName.value,inputType.value,inputValue.value)">Add Attribute</button>
+
+    Name:<input type="text" placeholder="name" #inputName />&nbsp;
+    Type:<input type="text" placeholder="type" #inputType />&nbsp;
+    Value:<input type="text" placeholder="value" #inputValue />&nbsp;
+
+    <div formArrayName="attributes">
+
+      <div *ngFor="let item of attributes.controls; index as i" >
+        <div [formGroupName]="i">
+          <label>
+            <b style="color: green;">{{i+1}} &nbsp;</b>
+            {{item.get('name')?.value}}
+          </label>
+          <label>
+            <b style="color: green;">{{i+1}} &nbsp;</b>
+            {{item.get('type')?.value}}
+          </label>
+          <label>
+            <b style="color: green;">{{i+1}} &nbsp;</b>
+            {{item.get('value')?.value}}
+          </label>
+          <button type="button" (click)="removeAttribute(i)">Remove</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-success">Submit</button>
+
+</form>
+</div>

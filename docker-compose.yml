@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+    orch-client:
+      build: .
+      container_name: "orch-client"
+      ports:
+       - '4200:4200'
+      volumes:
+       - ./:/orch-client
+      environment:
+       - STYLE=css
+
+
