@@ -19,7 +19,7 @@ import { OrchestratorService } from '../service/orchestrator.service';
 export class OrchFormComponent {
 
   entityForm: FormGroup;
-
+  result = "";
   submitted = false;
 
   constructor(private orchService: OrchestratorService,
@@ -70,10 +70,17 @@ export class OrchFormComponent {
 
     this.orchService.createEvent(entity).
     subscribe({
-      next: (v) => console.log(v),
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
-  });
-
+      next: (v) => {
+          console.log(v);
+          this.result = "SUCESS! ..."+v;
+      },
+      error: (e) => {
+          console.error(e);
+          this.result = "Erro! ..."+JSON.stringify(e);
+      },
+      complete() {
+        console.log("is completed");
+      },
+    });
   }
 }

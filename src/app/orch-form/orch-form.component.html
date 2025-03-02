@@ -1,6 +1,10 @@
-<div class="container">
-<p><b style="color: #007bff;">Create Event:</b></p>
+<div *ngIf="submitted" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{result}}</strong>
+</div>
 
+<div class="container">
+
+<p><b style="color: #007bff;">Create Event:</b></p>
 <form [formGroup]="entityForm" (ngSubmit)="submit(entityForm.value)">
 
   <div class="form-group">
@@ -28,11 +32,11 @@
             {{item.get('name')?.value}}
           </label>
           <label>
-            <b style="color: green;">{{i+1}} &nbsp;</b>
+            <b style="color: green;"> :&nbsp;</b>
             {{item.get('type')?.value}}
           </label>
           <label>
-            <b style="color: green;">{{i+1}} &nbsp;</b>
+            <b style="color: green;"> :&nbsp;</b>
             {{item.get('value')?.value}}
           </label>
           <button type="button" (click)="removeAttribute(i)">Remove</button>
@@ -46,3 +50,7 @@
 
 </form>
 </div>
+
+
+
+

@@ -17,7 +17,7 @@ export class OrchFormRuleComponent {
 
       entityRuleForm: FormGroup;
       submitted = false;
-
+      result = "";
       constructor(private orcService: OrchestratorService,
         private fb: FormBuilder) {
           this.entityRuleForm = this.fb.group({
@@ -48,9 +48,17 @@ export class OrchFormRuleComponent {
         console.log(JSON.stringify(entity));
 
         this.orcService.createRule(entity).subscribe({
-          next: (v) => console.log(v),
-          error: (e) => console.error(e),
-          complete: () => console.info('complete')
+            next: (v) => {
+                console.log(v);
+                this.result = "SUCESS! ..."+v;
+            },
+            error: (e) => {
+                console.error(e);
+                this.result = "Erro! ..."+JSON.stringify(e);
+            },
+            complete() {
+              console.log("is completed");
+            }
       });
     }
 }

@@ -17,7 +17,7 @@ import { OrchestratorService } from '../service/orchestrator.service';
 })
 export class OrchFormRuleUpdateComponent {
 
-
+  result = "";
   entityRuleUpdateForm: FormGroup;
   submitted = false;
 
@@ -58,9 +58,17 @@ export class OrchFormRuleUpdateComponent {
     console.log(JSON.stringify(entity));
 
     this.orcService.updateRule(entity).subscribe({
-      next: (v) => console.log(v),
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      next: (v) => {
+        console.log(v);
+        this.result = "SUCESS! ..."+v;
+    },
+    error: (e) => {
+        console.error(e);
+        this.result = "Erro! ..."+JSON.stringify(e);
+    },
+    complete() {
+      console.log("is completed");
+    }
   });
 }
 }

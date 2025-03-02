@@ -18,7 +18,7 @@ export class OrchFormRuleDeleteComponent {
 
   entityRuleDeleteForm: FormGroup;
   submitted = false;
-
+  result = "";
 
   constructor(private orcService: OrchestratorService,
     private fb: FormBuilder) {
@@ -43,9 +43,17 @@ export class OrchFormRuleDeleteComponent {
     console.log(JSON.stringify(entity));
 
     this.orcService.deleteRule(entity).subscribe({
-      next: (v) => console.log(v),
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      next: (v) => {
+          console.log(v);
+          this.result = "SUCESS! ..."+v;
+      },
+      error: (e) => {
+          console.error(e);
+          this.result = "Erro! ..."+JSON.stringify(e);
+      },
+      complete() {
+        console.log("is completed");
+      }
     });
   }
 }
