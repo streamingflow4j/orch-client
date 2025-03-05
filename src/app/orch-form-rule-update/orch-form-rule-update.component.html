@@ -9,20 +9,20 @@
 
     <div class="form-group">
       <label>Name Id:&nbsp;</label>
-      <input type="text" formControlName="id" required>
+      <input type="text" formControlName="id" style="width: 250px;" required>
       <div *ngIf="entityRuleUpdateForm.get('id')?.invalid && submitted" class="alert alert-danger">
         Name ID is required
       </div>
-      Rule ID: <input type="text" formControlName="idrule" required>
+      Rule ID: <input type="text" style="width: 250px;" formControlName="idrule" required>
       <div *ngIf="entityRuleUpdateForm.get('idrule')?.invalid && submitted" class="alert alert-danger">
         Rule ID is required
       </div>
       Event Rule:
-      <textarea id="rule" formControlName="rule" rows="5" cols="70"></textarea>
+      <textarea id="rule" formControlName="rule" rows="1" cols="50"></textarea>
       <div *ngIf="entityRuleUpdateForm.get('rule')?.invalid && submitted" class="alert alert-danger">
         Rule Query is required
       </div>
-      Destination Queue: <input type="text" formControlName="destination" required>
+      Destination Queue: <input type="text" style="width: 250px;" formControlName="destination" required>
       <div *ngIf="entityRuleUpdateForm.get('destination')?.invalid && submitted" class="alert alert-danger">
         Destination is required
       </div>

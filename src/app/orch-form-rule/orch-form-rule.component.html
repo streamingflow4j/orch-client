@@ -11,17 +11,17 @@
 
     <div class="form-group">
       Name Id:&nbsp;
-      <input type="text" formControlName="id" required>
+      <input type="text" formControlName="id" style="width: 250px;" required>
       <div *ngIf="entityRuleForm.get('id')?.invalid && submitted" class="alert alert-danger">
         Name ID is required
       </div>
 
       Event Rule:
-      <textarea id="rule" formControlName="rule" rows="5" cols="70"></textarea>
+      <textarea id="rule" formControlName="rule" rows="1" cols="50"></textarea>
       <div *ngIf="entityRuleForm.get('rule')?.invalid && submitted" class="alert alert-danger">
         Query is required
       </div>
-      Destination Queue: <input type="text" formControlName="destination" required>
+      Destination Queue: <input type="text" style="width: 250px;" formControlName="destination" required>
       <div *ngIf="entityRuleForm.get('destination')?.invalid && submitted" class="alert alert-danger">
         Destination is required
       </div>
