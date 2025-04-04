@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OrchFormRuleDeleteComponent } from './orch-form-rule-delete.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('OrchFormRuleDeleteComponent', () => {
   let component: OrchFormRuleDeleteComponent;
@@ -8,7 +9,7 @@ describe('OrchFormRuleDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OrchFormRuleDeleteComponent]
+      imports: [OrchFormRuleDeleteComponent], providers: [provideHttpClient()]
     })
     .compileComponents();
 

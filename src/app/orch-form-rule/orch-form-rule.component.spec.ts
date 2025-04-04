@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OrchFormRuleComponent } from './orch-form-rule.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('OrchFormRuleComponent', () => {
   let component: OrchFormRuleComponent;
@@ -8,7 +9,7 @@ describe('OrchFormRuleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OrchFormRuleComponent]
+      imports: [OrchFormRuleComponent], providers: [provideHttpClient()]
     })
     .compileComponents();
 

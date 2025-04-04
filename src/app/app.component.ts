@@ -12,7 +12,7 @@ import { OrchestratorService } from './service/orchestrator.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
+  title = 'orch-client';
 
   constructor(private orcService: OrchestratorService){
     orcService.setPlatform("Kafka");
@@ -21,7 +21,7 @@ export class AppComponent {
   scrollToTop() {
     throw new Error('Method not implemented.');
   }
-  title = 'orch-client';
+
 
   onChoiceChange(e: any) {
     // console.log((e.target as HTMLSelectElement)?.value); // also work
