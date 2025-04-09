@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'orch-client';
 
   constructor(private orcService: OrchestratorService){
-    orcService.setPlatform("Kafka");
+    orcService.setPlatform("kafka");
   }
 
   scrollToTop() {
